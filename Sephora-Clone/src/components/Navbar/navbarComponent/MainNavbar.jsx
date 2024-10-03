@@ -8,7 +8,6 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-
 import { useState } from "react";
 import { IconWithLabel } from "./IconWithLabel";
 import { RiStore3Line } from "react-icons/ri";
@@ -34,23 +33,40 @@ export const MainNavbar = () => {
         bg="white"
         color="black"
         minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4, md: "28" }}
+        py={{ base: 2, md: 4, lg: 6 }}
+        px={{ base: 7, md: 9, lg: 10 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={"gray.200"}
         align={"center"}
+        justifyContent={{
+          base: "space-between",
+          md: "flex-start",
+          lg: "center",
+        }}
       >
-        {/* Logo */}
-        <Flex flex={{ base: 1 }} mr={1}>
-          <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="semibold">
+        <Flex
+          flex="none" // Prevents shrinking or growing
+          justify={{ base: "center", md: "flex-start" }}
+          maxW={{ base: "150px", md: "200px", lg: "250px" }}
+        >
+          <Text
+            fontSize={{ base: "lg", md: "2xl", lg: "2xl" }}
+            fontWeight="semibold"
+            noOfLines={1} // Ensures it doesn't overflow into multiple lines
+          >
             SEPHORA
           </Text>
         </Flex>
 
         {/* Search Bar */}
-        <Flex flex={{ base: 2, md: 2 }} display={{ base: "none", md: "flex" }}>
-          <InputGroup size="md" border={1}>
+        <Flex
+          flex={{ base: 2, md: 2, lg: 1 }}
+          mx={{ base: 2, md: 4 }}
+          display={{ base: "flex" }}
+          maxW={{ base: "200px", md: "400px", lg:"500px"}}
+        >
+          <InputGroup size="md">
             {isIconVisible && (
               <InputLeftElement>
                 <SearchIcon color="gray.500" />
@@ -65,7 +81,12 @@ export const MainNavbar = () => {
         </Flex>
 
         {/* Right Side Icons */}
-        <Flex justify={"flex-end"}>
+        <Flex
+          flex={{ base: 1, md: 1, lg: "none" }} // none extra add tonight
+          justify={{ base: "flex-end", md: "flex-end" }}
+          alignItems="center"
+          mx={{ base: 2, md: 4 }} // extra add tonight
+        >
           {isLargeScreen && (
             <>
               <IconWithLabel
