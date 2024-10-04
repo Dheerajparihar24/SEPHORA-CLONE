@@ -9,8 +9,8 @@ export const IconWithLabel = ({
   badgeCount,
 }) => {
   return (
-    <Link>
-      <Flex alignItems="center" justify="center" mx={2}>
+    <Link style={{ textDecoration: "none" }}>
+      <Flex alignItems="center" justify="center" mx={{ base: "1", md: "2" }}>
         {/* Icon Section */}
         <Box position="relative" mr={2}>
           {icon ? (
@@ -36,8 +36,8 @@ export const IconWithLabel = ({
         </Box>
 
         {/* Text Labels Section */}
-        <Flex direction="column" >
-          <Text fontSize="sm" fontWeight="semibold"  noOfLines={1}>
+        <Flex direction="column">
+          <Text fontSize="sm" fontWeight="semibold" noOfLines={1}>
             {label}
           </Text>
           {subLabel && (

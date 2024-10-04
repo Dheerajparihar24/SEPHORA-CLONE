@@ -1,4 +1,4 @@
-import { SearchIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import {
   Divider,
   Flex,
@@ -14,10 +14,18 @@ import { RiStore3Line } from "react-icons/ri";
 import { AiOutlineUsergroupDelete } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
+import { HoverDropdown } from "./HoverDropdown";
+import { PopoverDropdown } from "./PopoverDropdown";
 
 export const MainNavbar = () => {
   const [isIconVisible, setIconVisible] = useState(true);
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+  const showHamburger = useBreakpointValue({
+    base: true,
+    md: true,
+    lg: false,
+    xl: false,
+  });
 
   const handleFocus = () => {
     setIconVisible(false);
@@ -34,7 +42,7 @@ export const MainNavbar = () => {
         color="black"
         minH={"60px"}
         py={{ base: 2, md: 4, lg: 6 }}
-        px={{ base: 7, md: 9, lg: 10 }}
+        px={{ base: 2, md: 9, lg: 10 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={"gray.200"}
@@ -64,7 +72,7 @@ export const MainNavbar = () => {
           flex={{ base: 2, md: 2, lg: 1 }}
           mx={{ base: 2, md: 4 }}
           display={{ base: "flex" }}
-          maxW={{ base: "200px", md: "400px", lg:"500px"}}
+          maxW={{ base: "200px", md: "400px", lg: "500px" }}
         >
           <InputGroup size="md">
             {isIconVisible && (
@@ -89,17 +97,23 @@ export const MainNavbar = () => {
         >
           {isLargeScreen && (
             <>
-              <IconWithLabel
-                icon={RiStore3Line}
-                label="Stores & Services"
-                subLabel="Choose Your Store"
-              />
+              <HoverDropdown>
+                <IconWithLabel
+                  icon={RiStore3Line}
+                  label="Stores & Services"
+                  subLabel="Choose Your Store"
+                  display={{ base: "none", lg: "flex" }}
+                />
+              </HoverDropdown>
 
-              <IconWithLabel
-                icon={AiOutlineUsergroupDelete}
-                label="Community"
-                display={{ base: "none", lg: "flex" }}
-              />
+              {/* PopoverDropdown for Community Icon */}
+              <PopoverDropdown community={true}>
+                <IconWithLabel
+                  icon={AiOutlineUsergroupDelete}
+                  label="Community"
+                  display={{ base: "none", lg: "flex" }}
+                />
+              </PopoverDropdown>
 
               <Divider
                 orientation="vertical"
@@ -107,16 +121,20 @@ export const MainNavbar = () => {
                 display={{ base: "none", lg: "flex" }}
               />
 
-              <IconWithLabel
-                iconSrc="src\assets\images\icon-3.svg"
-                label="Sign In"
-                subLabel="for FREE shipping🚗"
-              />
+              <PopoverDropdown>
+                <IconWithLabel
+                  iconSrc="src\assets\images\icon-3.svg"
+                  label="Sign In"
+                  subLabel="for FREE shipping🚗"
+                />
+              </PopoverDropdown>
+
+              <IconWithLabel icon={AiOutlineHeart} badgeCount={1} />
             </>
           )}
 
-          <IconWithLabel icon={AiOutlineHeart} badgeCount={1} />
           <IconWithLabel icon={AiOutlineShopping} />
+          {showHamburger && <HamburgerIcon />}
         </Flex>
       </Flex>
     </>
