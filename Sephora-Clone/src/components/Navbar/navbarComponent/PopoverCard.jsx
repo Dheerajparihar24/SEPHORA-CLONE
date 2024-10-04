@@ -57,7 +57,7 @@ export const PopoverCard = ({ label, subLabel, src }) => {
           borderRadius="2xl"
           width="160px"
           value="Create Account"
-           height="30px"
+          height="30px"
         />
       </Flex>
     </Box>
