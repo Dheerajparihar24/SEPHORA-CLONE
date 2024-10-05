@@ -14,3 +14,5 @@ navbar.
 6 **` DropDownCard.jsx`**- use for add card in `HoverDropdown`.
 
 7 **`PopoverDropdown`** - show dropdown in main navbar icon[2,3]
+
+8 **`PopoverCard `** -  use show card with img in `PopoverDropdown.jsx`.

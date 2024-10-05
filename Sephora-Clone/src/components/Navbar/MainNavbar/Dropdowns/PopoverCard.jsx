@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Avatar, Flex, Text, WrapItem, Box, Button } from "@chakra-ui/react";
-import { ButtonComponent } from "../common/ButtonComponent";
+import { Avatar, Flex, Text, WrapItem, Box } from "@chakra-ui/react";
+import { ButtonComponent } from "../../common/ButtonComponent";
 
 export const PopoverCard = ({ label, subLabel, src }) => {
   return (

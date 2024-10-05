@@ -9,13 +9,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { IconWithLabel } from "./IconWithLabel";
+import { IconWithLabel } from "./Icons/IconWithLabel";
 import { RiStore3Line } from "react-icons/ri";
 import { AiOutlineUsergroupDelete } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
-import { HoverDropdown } from "./HoverDropdown";
-import { PopoverDropdown } from "./PopoverDropdown";
+import { HoverDropdown } from "./Dropdowns/HoverDropdown";
+import { PopoverDropdown } from "./Dropdowns/PopoverDropdown";
 
 export const MainNavbar = () => {
   const [isIconVisible, setIconVisible] = useState(true);

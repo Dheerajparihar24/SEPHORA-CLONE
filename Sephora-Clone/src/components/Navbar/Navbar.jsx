@@ -1,7 +1,7 @@
-import { AnnouncementBanner } from "./navbarComponent/AnnouncementBanner";
+import { AnnouncementBanner } from "./AnnouncementBanner/AnnouncementBanner";
 import { Box } from "@chakra-ui/react";
-import { MainNavbar } from "./navbarComponent/MainNavbar";
-import { SecondaryNavbar } from "./navbarComponent/SecondaryNavbar";
+import { MainNavbar } from "./MainNavbar/MainNavbar";
+import { SecondaryNavbar } from "./SecondaryNavbar/SecondaryNavbar";
 
 export const Navbar = () => {
   return (

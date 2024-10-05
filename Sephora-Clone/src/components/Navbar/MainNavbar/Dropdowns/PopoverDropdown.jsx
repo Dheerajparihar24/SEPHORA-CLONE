@@ -8,7 +8,6 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  Text,
 } from "@chakra-ui/react";
 // import { BiSolidLocationPlus } from "react-icons/bi";
 import { DropDownCard } from "./DropDownCard";
