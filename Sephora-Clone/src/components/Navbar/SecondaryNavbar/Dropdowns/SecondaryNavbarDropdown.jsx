@@ -9,9 +9,16 @@ import {
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 export const SecondaryNavbarDropdown = ({ dropdownContent, children }) => {
+  const displayDropdown = useBreakpointValue({ base: false, lg: true });
+
+  if (!displayDropdown) {
+    return <>{children}</>;
+  }
+
   return (
     <Popover trigger="hover" placement="bottom-start" closeOnBlur={true}>
       <PopoverTrigger>{children}</PopoverTrigger>
