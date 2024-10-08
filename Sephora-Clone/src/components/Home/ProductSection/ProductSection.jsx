@@ -1,15 +1,114 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+/* eslint-disable react/prop-types */
+import { Box, Flex, Heading, IconButton } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
+// import { products } from "../../../data/product";
 
-export const ProductSection = () => {
+// --------Slider---------
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+
+export const ProductSection = ({ sectionLabel, products }) => {
+  const NextArrow = ({ onClick }) => {
+    return (
+      <IconButton
+        aria-label="Next"
+        icon={<ChevronRightIcon w={8} h={8} />}
+        position="absolute"
+        right="0"
+        top="50%"
+        transform="translateY(-50%)"
+        zIndex={2}
+        // bg="rgba(0, 0, 0, 0.6)"
+        color="white"
+        _hover={{ bg: "rgba(0, 0, 0, 0.8)" }}
+        onClick={onClick}
+        borderRadius="50%"
+        mx={-2}
+      />
+    );
+  };
+
+  const PrevArrow = ({ onClick }) => {
+    return (
+      <IconButton
+        aria-label="Previous"
+        icon={<ChevronLeftIcon w={8} h={8} />}
+        position="absolute"
+        left="0"
+        top="50%"
+        transform="translateY(-50%)"
+        zIndex={2}
+        // bg="rgba(0, 0, 0, 0.6)"
+        color="white"
+        _hover={{ bg: "rgba(0, 0, 0, 0.8)" }}
+        onClick={onClick}
+        borderRadius="50%"
+        disabled={products.length === products[0]}
+        mx={-2}
+      />
+    );
+  };
+
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
+  };
+
   return (
-    <Box style={{ padding: "10px" }}>
-      <Flex padding={10}>
-        <Heading size="lg"> Chose For You</Heading>
-      </Flex>
-      <Flex style={{ border:"1px solid black" }}>
-        <ProductCard />
-      </Flex>
-    </Box>
+    <Flex w="100%" direction="column">
+      {/* Slider box */}
+      <Box overflow="hidden" width="100%" p={5} m="auto" position="relative">
+        {/* Slider title */}
+        <Box my="2">
+          <Heading fontSize={{ base: "16px", lg: "16px" }} fontWeight="bold">
+            {sectionLabel}
+          </Heading>
+        </Box>
+        <Box>
+          <Slider {...settings}>
+            {products.map((product, i) => (
+              <ProductCard
+                key={i}
+                srcImg={product.image}
+                title={product.label}
+                subTitle={product.subLabel}
+                price={product.price}
+                rating={product.rating}
+                reviewCount={product.reviewCount}
+              />
+            ))}
+          </Slider>
+        </Box>
+      </Box>
+    </Flex>
   );
 };

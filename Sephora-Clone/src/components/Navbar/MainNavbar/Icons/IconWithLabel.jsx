@@ -7,6 +7,8 @@ export const IconWithLabel = ({
   label,
   subLabel,
   badgeCount,
+  color = "black",
+  subLabelColor = "gray.500",
 }) => {
   return (
     <Link style={{ textDecoration: "none" }}>
@@ -37,11 +39,11 @@ export const IconWithLabel = ({
 
         {/* Text Labels Section */}
         <Flex direction="column">
-          <Text fontSize="sm" fontWeight="semibold" noOfLines={1}>
+          <Text fontSize="sm" fontWeight="semibold" noOfLines={1} color={color}>
             {label}
           </Text>
           {subLabel && (
-            <Text fontSize="xs" color="gray.500">
+            <Text fontSize="xs" color={subLabelColor}>
               {subLabel}
             </Text>
           )}

@@ -8,13 +8,13 @@ export const StarReviews = ({ rating, reviewCount }) => {
     let number = index + 0.5;
 
     return (
-      <span key={index}>
+      <span key={index} style={{fontSize:"14px"}}> 
         {rating >= index + 1 ? (
-          <FaStar className="icon" color="orange" />
+          <FaStar className="icon" color="black"  />
         ) : rating >= number ? (
-          <FaStarHalfAlt className="icon" color="orange" />
+          <FaStarHalfAlt className="icon" color="black" />
         ) : (
-          <AiOutlineStar className="icon" color="gray" />
+          <AiOutlineStar className="icon" color="black" />
         )}
       </span>
     );
