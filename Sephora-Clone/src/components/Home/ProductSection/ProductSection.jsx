@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
-import { Box, Flex, Heading, IconButton } from "@chakra-ui/react";
+import { Box, Flex, Heading, IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
-// import { products } from "../../../data/product";
-
-// --------Slider---------
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 export const ProductSection = ({ sectionLabel, products }) => {
+  // Hook to determine if it's a mobile view (breakpoint 480px)
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   const NextArrow = ({ onClick }) => {
+    if (isMobile) return null; // Hide the button in mobile view
     return (
       <IconButton
         aria-label="Next"
@@ -20,7 +21,6 @@ export const ProductSection = ({ sectionLabel, products }) => {
         top="50%"
         transform="translateY(-50%)"
         zIndex={2}
-        // bg="rgba(0, 0, 0, 0.6)"
         color="white"
         _hover={{ bg: "rgba(0, 0, 0, 0.8)" }}
         onClick={onClick}
@@ -31,6 +31,7 @@ export const ProductSection = ({ sectionLabel, products }) => {
   };
 
   const PrevArrow = ({ onClick }) => {
+    if (isMobile) return null; // Hide the button in mobile view
     return (
       <IconButton
         aria-label="Previous"
@@ -40,12 +41,10 @@ export const ProductSection = ({ sectionLabel, products }) => {
         top="50%"
         transform="translateY(-50%)"
         zIndex={2}
-        // bg="rgba(0, 0, 0, 0.6)"
         color="white"
         _hover={{ bg: "rgba(0, 0, 0, 0.8)" }}
         onClick={onClick}
         borderRadius="50%"
-        // disabled={products.length === products[0]}
         mx={-2}
       />
     );
@@ -54,8 +53,8 @@ export const ProductSection = ({ sectionLabel, products }) => {
   const settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToShow: isMobile ? 1 : 6, 
+    slidesToScroll: isMobile ? 1 : 6, 
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -84,9 +83,20 @@ export const ProductSection = ({ sectionLabel, products }) => {
   };
 
   return (
-    <Flex w="100%" direction="column" px={{ base: "50px", lg: "105px" }}>
+    <Flex
+      w="100%"
+      direction="column"
+      px={{ base: "0px", lg: "105px" }} 
+      mx={isMobile ? "0px" : "auto"} 
+    >
       {/* Slider box */}
-      <Box overflow="hidden" width="100%" p={5} m="auto" position="relative">
+      <Box
+        overflow="hidden"
+        width="100%"
+        p={isMobile ? "0" : 5} 
+        m={isMobile ? "0" : "auto"} 
+        position="relative"
+      >
         {/* Slider title */}
         <Box my="2">
           <Heading fontSize={{ base: "16px", lg: "16px" }} fontWeight="bold">

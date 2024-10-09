@@ -3,7 +3,6 @@ import {
   Button,
   Divider,
   Flex,
-  Image,
   Input,
   Link,
   Text,
@@ -13,17 +12,26 @@ import { IconWithLabel } from "../Navbar/MainNavbar/Icons/IconWithLabel";
 export const Footer = () => {
   return (
     <Box mt={5}>
-      <Box textAlign="center" bg="#CCCCCC" py={10}>
+      <Box textAlign="center" bg="#CCCCCC" py={{ base: "5", lg: "10" }}>
         <Link fontWeight="bold">Website feedback? Let us know</Link>
       </Box>
       <Box bg="black">
-        <Flex width="80%" margin="auto" justifyContent="space-around" py={5}>
+        <Flex
+          width="80%"
+          margin="auto"
+          justifyContent="space-around"
+          py={5}
+          direction={{ base: "column", lg: "row" }}
+          rowGap={3}
+          outline={true}
+        >
           <IconWithLabel
             iconSrc="https://www.sephora.com/img/ufe/icons/find-store.svg"
             label="Find a Store"
             subLabel="Chose Your Store"
             color="white"
             subLabelColor="white"
+            outline={true}
           />
 
           <IconWithLabel
@@ -32,6 +40,7 @@ export const Footer = () => {
             subLabel="Chat is unavailable"
             color="white"
             subLabelColor="white"
+            outline={true}
           />
           <IconWithLabel
             iconSrc="https://www.sephora.com/img/ufe/icons/app.svg"
@@ -39,6 +48,7 @@ export const Footer = () => {
             subLabel="Download Now"
             color="white"
             subLabelColor="white"
+            outline={true}
           />
           <IconWithLabel
             iconSrc="https://www.sephora.com/img/ufe/icons/sms-ko.svg"
@@ -46,6 +56,7 @@ export const Footer = () => {
             subLabel="Sign up Now"
             color="white"
             subLabelColor="white"
+            outline={true}
           />
           <IconWithLabel
             iconSrc="https://www.sephora.com/img/ufe/icons/cc-outline-ko.svg"
@@ -53,17 +64,28 @@ export const Footer = () => {
             subLabel="Want 25% off your Sephora purchase? DETAILS"
             color="white"
             subLabelColor="white"
+            noOfLine={1}
+            outline={true}
           />
         </Flex>
 
         <Divider my={5} />
 
         <Flex justify="center" direction="column" align="center">
-          <Text fontSize="25px" fontWeight="bold" color="white">
+          <Text
+            fontSize="25px"
+            fontWeight="bold"
+            color="white"
+            textAlign="center"
+          >
             We Belong to Something Beautiful
           </Text>
-          <Flex gap={20} marginTop={2}>
-            <Box>
+          <Flex
+            gap={{ base: "5", lg: "20" }}
+            marginTop={2}
+            direction={{ base: "column", lg: "row" }}
+          >
+            <Box mx={2}>
               <Text fontSize="14px" color="white">
                 Sign up for Sephora text updates
               </Text>
@@ -71,7 +93,7 @@ export const Footer = () => {
                 <Input
                   placeholder="Mobile Phone Number"
                   bg="white"
-                  my={2}
+                  my={{ base: "0", lg: "2" }}
                   height="35px"
                   outline="none"
                 />
@@ -87,15 +109,18 @@ export const Footer = () => {
                 </Button>
               </Flex>
             </Box>
-            <Box>
-              <Text color="white" fontSize="14px">
+
+            <Box mx={2}>
+              <Text fontSize="14px" color="white">
                 Sign up for Sephora Emails
               </Text>
               <Flex gap={5} alignItems="center">
                 <Input
                   placeholder="Enter your Email Address"
                   bg="white"
-                  my={2}
+                  my={{ base: "0", lg: "2" }}
+                  height="35px"
+                  outline="none"
                 />
                 <Button
                   variant="outline"
@@ -115,7 +140,9 @@ export const Footer = () => {
 
           <Flex justify="space-around" marginBottom={5}>
             <Box>
-              <Text color="white ">© 2024 Sephora USA, Inc. All rights reserved.</Text>
+              <Text color="white " fontSize={{ base: "14px", lg: "16px" }}>
+                © 2024 Sephora USA, Inc. All rights reserved.
+              </Text>
             </Box>
             {/* logos  */}
             {/* <Flex>

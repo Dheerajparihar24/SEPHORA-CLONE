@@ -16,7 +16,7 @@ export const HeroSectionCard = ({ srcImg, label, subLabel, label2 }) => {
             {label}
           </Text>
           <Text>{subLabel}</Text>
-          <Text display="block" my={2} fontWeight="bold" fontSize="lg">
+          <Text display="block" my={2} fontWeight="bold" fontSize="md">
             {label2}
           </Text>
         </Box>

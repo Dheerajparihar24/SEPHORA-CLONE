@@ -9,9 +9,16 @@ export const IconWithLabel = ({
   badgeCount,
   color = "black",
   subLabelColor = "gray.500",
+  noOfLines,
+  outline,
 }) => {
   return (
-    <Link style={{ textDecoration: "none" }}>
+    <Link
+      style={{ textDecoration: "none" }}
+      border={outline ? "1px solid white" : "none"}
+      p={outline ? "2" : "0"}
+      borderRadius="md"
+    >
       <Flex alignItems="center" justify="center" mx={{ base: "1", md: "2" }}>
         {/* Icon Section */}
         <Box position="relative" mr={2}>
@@ -43,7 +50,11 @@ export const IconWithLabel = ({
             {label}
           </Text>
           {subLabel && (
-            <Text fontSize="xs" color={subLabelColor}>
+            <Text
+              fontSize="xs"
+              color={subLabelColor}
+              noOfLines={noOfLines || 1}
+            >
               {subLabel}
             </Text>
           )}
