@@ -22,8 +22,8 @@ export const ProductCard = ({
     <Card
       h={{ base: "280px", lg: "323px" }}
       m={2}
-      borderRadius={2}
-      style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+      borderRadius={5}
+      style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
       cursor="pointer"
       position="relative"
       overflow="hidden"
@@ -58,7 +58,11 @@ export const ProductCard = ({
             Quicklook
           </Button>
         </Box>
-        <Heading noOfLines={1} fontSize={{ base: "12px", lg: "14px" }} fontWeight="bold">
+        <Heading
+          noOfLines={1}
+          fontSize={{ base: "12px", lg: "14px" }}
+          fontWeight="bold"
+        >
           {title}
         </Heading>
 

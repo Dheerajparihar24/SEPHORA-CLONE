@@ -45,7 +45,7 @@ export const ProductSection = ({ sectionLabel, products }) => {
         _hover={{ bg: "rgba(0, 0, 0, 0.8)" }}
         onClick={onClick}
         borderRadius="50%"
-        disabled={products.length === products[0]}
+        // disabled={products.length === products[0]}
         mx={-2}
       />
     );
@@ -84,7 +84,7 @@ export const ProductSection = ({ sectionLabel, products }) => {
   };
 
   return (
-    <Flex w="100%" direction="column">
+    <Flex w="100%" direction="column" px={{ base: "50px", lg: "105px" }}>
       {/* Slider box */}
       <Box overflow="hidden" width="100%" p={5} m="auto" position="relative">
         {/* Slider title */}
