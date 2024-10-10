@@ -20,10 +20,13 @@ export const Home = () => {
       <OfferSectionBanner />
 
       <ProductSection sectionLabel="Celebrate La Cultura" products={products} />
+      
       <ProductSection
         sectionLabel="Beauty Insider Rewards"
         products={products}
       />
+
+      <OfferSectionBanner />
       <Footer />
     </div>
   );

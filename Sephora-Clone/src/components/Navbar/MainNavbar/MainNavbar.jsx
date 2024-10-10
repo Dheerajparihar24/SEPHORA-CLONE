@@ -54,14 +54,14 @@ export const MainNavbar = () => {
         }}
       >
         <Flex
-          flex="none" // Prevents shrinking or growing
+          flex="none"
           justify={{ base: "center", md: "flex-start" }}
           maxW={{ base: "150px", md: "200px", lg: "250px" }}
         >
           <Text
             fontSize={{ base: "lg", md: "2xl", lg: "2xl" }}
             fontWeight="semibold"
-            noOfLines={1} // Ensures it doesn't overflow into multiple lines
+            noOfLines={1} 
           >
             SEPHORA
           </Text>
@@ -90,10 +90,10 @@ export const MainNavbar = () => {
 
         {/* Right Side Icons */}
         <Flex
-          flex={{ base: 1, md: 1, lg: "none" }} // none extra add tonight
+          flex={{ base: 1, md: 1, lg: "none" }} 
           justify={{ base: "flex-end", md: "flex-end" }}
           alignItems="center"
-          mx={{ base: 2, md: 4 }} // extra add tonight
+          mx={{ base: 2, md: 4 }}
         >
           {isLargeScreen && (
             <>

@@ -1,0 +1,131 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "srcImg": "https://www.sephora.com/productimages/sku/s2207231-main-zoom.jpg?imwidth=122",
+        "name": "Glow Recipe",
+        "shortDescription": "Watermelon Glow Ultra-Fine Mist",
+        "additionalImg": [
+          "https://www.sephora.com/productimages/product/p442744-av-01-zoom.jpg?imwidth=48",
+          "https://www.sephora.com/productimages/product/p442744-av-03-zoom.jpg?imwidth=48",
+          "https://www.sephora.com/productimages/product/p442744-av-04-zoom.jpg?imwidth=48",
+          "https://www.sephora.com/productimages/product/p442744-av-02-zoom.jpg?imwidth=48"
+        ],
+        "category": "Hair Care",
+        "price": 29.00,
+        "discountPrice": 25.00,
+        "rating": 4.5,
+        "quantity": 100,
+        "reviews": 250
+      },
+      {
+        "id": 2,
+        "srcImg": "https://www.sephora.com/contentimages/2024-oct-oh-hair-yeah-site-desktop-home-page-rwd-hero-banner-generic-1200x800-us-can-2833.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Fragrances",
+        "price": 45.00,
+        "discountPrice": 40.00,
+        "rating": 4.7,
+        "quantity": 50,
+        "reviews": 320
+      },
+      {
+        "id": 3,
+        "srcImg": "https://www.sephora.com/contentimages/2024-10-07-slotting-october-minis-v2-site-rwd-home-page-hero-banner-US-handoff-slice-01.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Beauty Minis",
+        "price": 15.00,
+        "discountPrice": 13.00,
+        "rating": 4.3,
+        "quantity": 150,
+        "reviews": 150
+      },
+      {
+        "id": 4,
+        "srcImg": "https://www.sephora.com/contentimages/2024-10-07-slotting-october-minis-v2-site-rwd-home-page-hero-banner-US-handoff-slice-01.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Beauty Minis",
+        "price": 15.00,
+        "discountPrice": 13.00,
+        "rating": 4.3,
+        "quantity": 150,
+        "reviews": 150
+      },
+      {
+        "id": 5,
+        "srcImg": "https://www.sephora.com/contentimages/2024-q3-fragrance-site-home-page-RWD-hero-banner-newness-us-can-2957-image-only.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Fragrances",
+        "price": 55.00,
+        "discountPrice": 50.00,
+        "rating": 4.8,
+        "quantity": 80,
+        "reviews": 410
+      },
+      {
+        "id": 6,
+        "srcImg": "https://www.sephora.com/contentimages/2024-aug-acne-mbc-site-desktop-mobile-app-home-page-rwd-hero-banner-post-acne-1200x800-can-3018.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Skincare",
+        "price": 35.00,
+        "discountPrice": 30.00,
+        "rating": 4.6,
+        "quantity": 200,
+        "reviews": 180
+      },
+      {
+        "id": 7,
+        "srcImg": "https://www.sephora.com/contentimages/2024-holiday-preview-site-home-page-RWD-hero-banner-general-preview-new-exclusive-v2-us-can-2995-artwork-only.jpg?imwidth=545",
+        "name": "Decadent Vanilla Scents",
+        "shortDescription": "Spritz on what's trending this season.",
+        "additionalImg": [
+          "https://www.example.com/image1.jpg",
+          "https://www.example.com/image2.jpg",
+          "https://www.example.com/image3.jpg",
+          "https://www.example.com/image4.jpg"
+        ],
+        "category": "Holiday Specials",
+        "price": 65.00,
+        "discountPrice": 60.00,
+        "rating": 4.9,
+        "quantity": 30,
+        "reviews": 210
+      }
+    ]
+  }
+  

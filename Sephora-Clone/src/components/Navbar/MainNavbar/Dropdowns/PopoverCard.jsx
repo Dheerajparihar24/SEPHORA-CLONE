@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
-import { Avatar, Flex, Text, WrapItem, Box } from "@chakra-ui/react";
+import {
+  Avatar,
+  Flex,
+  Text,
+  WrapItem,
+  Box,
+
+} from "@chakra-ui/react";
 import { ButtonComponent } from "../../common/ButtonComponent";
+import { SignUp } from "../../../Home/Sign Up/SignUp";
 
 export const PopoverCard = ({ label, subLabel, src }) => {
+
+
   return (
     <Box>
       <Flex py={2}>
@@ -23,34 +33,22 @@ export const PopoverCard = ({ label, subLabel, src }) => {
               {subLabel}
             </Text>
           )}
-
-          {/* {notification && (
-            <>
-              <Text>No</Text>
-              <Text>Yes</Text>
-            </>
-          )} */}
         </Flex>
       </Flex>
       <Flex justifyContent="space-between">
-        <ButtonComponent
-          variant="solid"
-          bg="black"
-          colorScheme="black"
-          borderRadius="2xl"
-          width="160px"
-          value={"Sign In"}
-          height="30px"
-        />
+        <SignUp>
+          <ButtonComponent
+            variant="solid"
+            bg="black"
+            colorScheme="black"
+            borderRadius="2xl"
+            width="160px"
+            value={"Sign In"}
+            height="30px"
 
-        {/* <Button
-          variant="outline"
-          colorScheme="black"
-          borderRadius="2xl"
-          width="160px"
-        >
-          Create Account
-        </Button> */}
+          />
+        </SignUp>
+
         <ButtonComponent
           variant="outline"
           colorScheme="black"
@@ -60,6 +58,7 @@ export const PopoverCard = ({ label, subLabel, src }) => {
           height="30px"
         />
       </Flex>
+
     </Box>
   );
 };

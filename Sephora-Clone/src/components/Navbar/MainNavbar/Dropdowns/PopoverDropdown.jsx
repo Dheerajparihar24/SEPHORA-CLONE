@@ -63,6 +63,7 @@ export const PopoverDropdown = ({ children, community }) => {
                 label="Community Home"
                 subLabel="Ask questions, join challenges, and get recommendations from people like"
               />
+              
             </Box>
           )}
         </PopoverBody>
