@@ -86,7 +86,7 @@ const settings = {
 
 export const HeroSection = () => {
   return (
-    <Box width="100%" mx="auto" overflow="hidden">
+    <Box width="100%" mx="auto" overflow="hidden" >
       <Slider {...settings}>
         {data.map((card, i) => (
           <Box key={i}>

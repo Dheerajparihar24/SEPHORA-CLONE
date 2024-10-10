@@ -1,18 +1,10 @@
 /* eslint-disable react/prop-types */
-import {
-  Avatar,
-  Flex,
-  Text,
-  WrapItem,
-  Box,
-
-} from "@chakra-ui/react";
+import { Avatar, Flex, Text, WrapItem, Box } from "@chakra-ui/react";
 import { ButtonComponent } from "../../common/ButtonComponent";
 import { SignUp } from "../../../Home/Sign Up/SignUp";
+import { CreateAccount } from "../../../Home/CreateAccount/CreateAccount";
 
 export const PopoverCard = ({ label, subLabel, src }) => {
-
-
   return (
     <Box>
       <Flex py={2}>
@@ -45,20 +37,20 @@ export const PopoverCard = ({ label, subLabel, src }) => {
             width="160px"
             value={"Sign In"}
             height="30px"
-
           />
         </SignUp>
 
-        <ButtonComponent
-          variant="outline"
-          colorScheme="black"
-          borderRadius="2xl"
-          width="160px"
-          value="Create Account"
-          height="30px"
-        />
+        <CreateAccount>
+          <ButtonComponent
+            variant="outline"
+            colorScheme="black"
+            borderRadius="2xl"
+            width="160px"
+            value="Create Account"
+            height="30px"
+          />
+        </CreateAccount>
       </Flex>
-
     </Box>
   );
 };
