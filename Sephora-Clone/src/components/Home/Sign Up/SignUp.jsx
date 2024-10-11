@@ -16,7 +16,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import axios from "axios";
+// import axios from "axios";
 import { useRef, useState } from "react";
 import { CreateAccount } from "../CreateAccount/CreateAccount";
 
@@ -28,22 +28,13 @@ export const SignUp = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = async () => {
+  const handleSignIn = () => {
     const user = {
       email,
       password,
     };
 
-    try {
-      const response = await axios.post(
-        "https://sephora-e81aa-default-rtdb.asia-southeast1.firebasedatabase.app/users.json",
-        user
-      );
-      alert("User created successfully", response.data);
-    } catch (error) {
-      alert("error", error);
-      console.log(error.message);
-    }
+    alert("Sign In ", user);
   };
 
   return (

@@ -19,6 +19,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
 import { HoverDropdown } from "./Dropdowns/HoverDropdown";
 import { PopoverDropdown } from "./Dropdowns/PopoverDropdown";
+import { SignUp } from "../../Home/Sign Up/SignUp";
 
 export const MainNavbar = () => {
   const [isIconVisible, setIconVisible] = useState(true);
@@ -151,9 +152,11 @@ export const MainNavbar = () => {
               Don&apos;t have an Account ? <Link>Create Account</Link>
             </Text>
           </Box>
-          <Button bg="black" color="white">
-            Sign In
-          </Button>
+          <SignUp>
+            <Button bg="black" color="white">
+              Sign In
+            </Button>
+          </SignUp>
         </Flex>
       )}
     </>
