@@ -1,10 +1,13 @@
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import {
+  Box,
+  Button,
   Divider,
   Flex,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -61,7 +64,7 @@ export const MainNavbar = () => {
           <Text
             fontSize={{ base: "lg", md: "2xl", lg: "2xl" }}
             fontWeight="semibold"
-            noOfLines={1} 
+            noOfLines={1}
           >
             SEPHORA
           </Text>
@@ -90,7 +93,7 @@ export const MainNavbar = () => {
 
         {/* Right Side Icons */}
         <Flex
-          flex={{ base: 1, md: 1, lg: "none" }} 
+          flex={{ base: 1, md: 1, lg: "none" }}
           justify={{ base: "flex-end", md: "flex-end" }}
           alignItems="center"
           mx={{ base: 2, md: 4 }}
@@ -137,6 +140,22 @@ export const MainNavbar = () => {
           {showHamburger && <HamburgerIcon />}
         </Flex>
       </Flex>
+
+      {showHamburger && (
+        <Flex justify="space-between" px={5} my={2}>
+          <Box>
+            <Text fontSize="16px" fontWeight="semibold">
+              Sign In for FREE Shipping 🚗
+            </Text>
+            <Text fontSize="14px">
+              Don&apos;t have an Account ? <Link>Create Account</Link>
+            </Text>
+          </Box>
+          <Button bg="black" color="white">
+            Sign In
+          </Button>
+        </Flex>
+      )}
     </>
   );
 };

@@ -3,8 +3,6 @@ import {
   Box,
   Button,
   Flex,
-  FormControl,
-  FormLabel,
   Heading,
   Input,
   InputGroup,
@@ -18,7 +16,6 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { h3 } from "framer-motion/client";
 import { useRef, useState } from "react";
 import { SignUp } from "../Sign Up/SignUp";
 

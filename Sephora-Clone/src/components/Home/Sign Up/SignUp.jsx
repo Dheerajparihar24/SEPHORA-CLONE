@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useRef, useState } from "react";
+import { CreateAccount } from "../CreateAccount/CreateAccount";
 
 export const SignUp = ({ children }) => {
   const initialRef = useRef(null);
@@ -111,14 +112,16 @@ export const SignUp = ({ children }) => {
               <Text mb={2} fontWeight="bold">
                 New to Sephora?
               </Text>
-              <Button
-                variant="outline"
-                borderRadius="25px"
-                color="black"
-                outlineColor="black"
-              >
-                Create Account
-              </Button>
+              <CreateAccount>
+                <Button
+                  variant="outline"
+                  borderRadius="25px"
+                  color="black"
+                  outlineColor="black"
+                >
+                  Create Account
+                </Button>
+              </CreateAccount>
             </Flex>
           </ModalFooter>
         </ModalContent>
