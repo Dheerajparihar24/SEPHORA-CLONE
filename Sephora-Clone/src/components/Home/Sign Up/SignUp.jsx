@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   Button,
   ButtonGroup,
@@ -15,26 +14,70 @@ import {
   ModalOverlay,
   Text,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
-// import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CreateAccount } from "../CreateAccount/CreateAccount";
+import axios from "axios";
 
 export const SignUp = ({ children }) => {
   const initialRef = useRef(null);
   const finalRef = useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast(); // Initialize toast
 
+  const [users, setUsers] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
-    const user = {
-      email,
-      password,
-    };
+  useEffect(() => {
+    axios
+      .get(
+        "https://sephora-e81aa-default-rtdb.asia-southeast1.firebasedatabase.app/users.json"
+      )
+      .then((response) => {
+        setUsers(response.data);
+      });
+  }, []);
 
-    alert("Sign In ", user);
+  const handleSignIn = () => {
+    if (users) {
+      const userEntries = Object.values(users); // Convert users object to array
+      const matchedUser = userEntries.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (matchedUser) {
+        // Show a welcome toast with the user's name
+        toast({
+          title: `Welcome back, ${matchedUser.firstName}!`,
+          description: "You've signed in successfully.",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
+
+        onClose(); // Close the modal after sign-in
+      } else {
+        // Show error toast if credentials don't match
+        toast({
+          title: "Invalid credentials",
+          description: "Email or password is incorrect.",
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        });
+      }
+    } else {
+      // Show error toast if no users are found
+      toast({
+        title: "No users found",
+        description: "Please create an account.",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
